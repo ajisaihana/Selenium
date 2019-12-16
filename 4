@@ -1,0 +1,47 @@
+from selenium import webdriver
+import unittest
+from selenium.webdriver.common.keys import Keys
+import time
+
+#
+# from webdriver_manager.chrome import ChromeDriverManager
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+
+#
+# class AdminPrint(unittest.TestCase):
+#     def setUp(self):
+#         self.driver = webdriver.Chrome()
+#         self.driver.get('https://accounts.google.com/signin/oauth/identifier?client_id=300943692110-tpa61pc5avkre9khqbff5bajvpjoikfo.apps.googleusercontent.com&as=b6b9gbgqxBWVirjnEnIUow&destination=https%3A%2F%2Fqa-prime.edcew.ecbsn.com&approval_state=!ChRzbU9ndHdwa2JBNnQ4TEFwTEtUbBIfbzRiSGhDLWdYQTBRSU5vbEVpbVNxcUUxVjREMDhCWQ%E2%88%99AJDr988AAAAAXfjxPwZxXNOxpi73b9rwQ6eWsKHabVXP&oauthgdpr=1&xsrfsig=ChkAeAh8TxnDn_gKnQHjGJwaxwiCeVm_RQPJEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow')
+#
+#     def test_01(self):
+#         driver = self.driver
+#         input_field = driver.find_element_by_id("identifierId")
+#         input_field.send_keys('koleksandr@ebates.com')
+#         input_field.send_keys(Keys.ENTER)
+#
+#
+#         time.sleep(3)
+
+
+class AdminPrint2(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.get('https://ebates.okta.com/login/login.htm?fromURI=%2Fapp%2Fgoogle%2Fexk1djm8de3u1kn880h8%2Fsso%2Fsaml%3FSAMLRequest%3DfVJLT9wwEL5X6n%252BwfM9rRVFrbYIWEOpKtI3YwIGbcSZeg%252B1xPc5u%252B%252B%252FJZkGlBzh6%252FM33mJnl2R9n2Q4iGfQ1r%252FKSM%252FAKe%252BN1zW%252B7q%252BwrP2s%252Bf1qSdDaI1Zi2%252FgZ%252Bj0CJTZ2exPxR8zF6gZIMCS8dkEhKbFY%252FrsUiL0WImFCh5Wx9WXP0Dp70FkPYukEH7dyjVYNEHfqnQYagjdaPAyJnd6%252B2Fgdba6IR1p6S9GkqldW3rFpk1WlXfREnpShP7zlrX5TOjT8m%252BMjWwxFE4nvXtVn7a9PNBDvTQ%252Fw5oWuuEbWFXKE7yLeSyOym8iAtAWcrIohpMniBnkYHcQNxZxTc3lzXfJtSIFEU%252B%252F0%252B%252F0dTyAIeZAI6PhTxZp6smMPFNyP92Lp8lebNO%252BTL4g1v87K%252BQ6r1ZYvWqL9sZS3uLyJMHTVPcZwSXWF0Mr0vXeXVXDF9NsxQMXoKoMxgoOesaI6q%252F9%252FJdD3P%26RelayState%3Dhttps%253A%252F%252Faccounts.google.com%252FCheckCookie%253Fplt%253DAKgnsbtsOhLukBRBrbPcfNVF6SNxN3eSR8Z3Xv2Bhfq01fX4rUWeGVV4yBf9nW7sLIfp6nbtyfuVOXm_5jjnw96FtVO0wnKvYC1WFZG6pQWnQBn3FVe28j8Mn3gMZnJUncB3sZScDamC%2526continue%253Dhttps%25253A%25252F%25252Faccounts.google.com%25252Fsignin%25252Foauth%25252Fconsent%25253Fauthuser%25253Dunknown%252526part%25253DAJi8hANxQqZZgmdr7SlAaOZAB8GytqxorxVXtGv4fASjQmwD-ImCtQ6-EHA9YHmycwglU-UPpOBQdWICo3aRzLseDXRXR7eU0XEU_QTDzOX0F45co3If9KOTIUAiRzEysgdlWVJAI6xSxKV3wAOIyoLONVCQIg7p051TOFbVvrN91JgxI0duQHGwhuPPO4kGuBhL6BxQHezXx732sfF0ILfBZ3e3E1RUxvJqdcC3RHuL2q6X7L_wfOCfFzYtN9m1gYF6KBgWpuZFybvP5Y0BMIl3NebD71nkDlMIiUgdMU4EnychRptZT3lGDIYLwG-U1gs1NsQYMxU5yFprJSaVE6OVEz4GVgVjY8jR0kqQnN7A64JCu-ZYaVK2utS_u6cKxLD77gqYS1_vpWO_O9UZtb8_8B_GrNumvikeBpSnSMwC_qLabhQLAGRwsmiMIwpmh29nID60AIqY%252526as%25253Dg4seukQeY60gLkwU2u-czg%252523')
+
+
+    def test_02(self):
+        driver = self.driver
+        input_field = driver.find_element_by_id("okta-signin-username")
+        input_field.send_keys('koleksandr@ebates.com')
+        input_field.send_keys(Keys.ENTER)
+        input_field2 = driver.find_element_by_id("okta-signin-password")
+        input_field2.send_keys('Ajisaihana1$')
+        input_field.send_keys(Keys.ENTER)
+
+    # def tearDown(self):
+    #     self.driver.quit()
+
+#
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,0 +1,29 @@
+from selenium import webdriver
+from selenium.webdriver import Chrome, ChromeOptions
+import time
+
+BaseUrl = 'https://ebates.okta.com/login/login.htm?fromURI=%2Fapp%2Fgoogle%2Fexk1djm8de3u1kn880h8%2Fsso%2Fsaml%3FSAMLRequest%3DfVLNbsIwDL5P2jtUubel7MAW0SIGQkNiWwVlh91C6pZAmnRxCtvbLxTQ2AGkXOzY34%252Ft%252FuC7kt4ODAqtYhIFHeKB4joXqozJMpv4j2SQ3N%252F1kVWypsPGrtUcvhpA67lOhbT9iEljFNUMBVLFKkBqOV0MX2e0G3RobbTVXEviTccx2TJRl0JU5Wa73XAGvFiLIlda5CWrpYZN5QLY5sT7OMvqHmRNERuYKrRMWZfqRE9%252B1PWjXtZ5ou499D6Jl56YnoU6Orgla3UsQvqSZamfvi%252ByFmAncjBvrjompdalhIDr6kCfMkSxc%252BmCSQTiDRHBWCdwpBU2FZgFmJ3gsJzPYrK2tkYahvv9PviDCVkIK2YBjwFHkrSTpa05czHS29LZmZokV8D74QVuclrfwdV0nGop%252BI83lFLvRwZcR0ysaZyjiTYVs9epoyBqMyL3i7aUNgpr4KIQ4PYVJkfW%252F3firucX%26RelayState%3Dhttps%253A%252F%252Faccounts.google.com%252FCheckCookie%253Fplt%253DAKgnsbshYnrAkcs0JeT9AoevhRN2vc63kYB_lhUpvYjsu45RbPOpc-aoouLmEolIgLwNKe8aXQQz5t-g6CyCo3QGsj99dw3UepDBzO-IV9Nz8NE8e-TzzE8YQeM9EZKeyzMto6KdBReN%2526continue%253Dhttps%25253A%25252F%25252Faccounts.google.com%25252Fsignin%25252Foauth%25252Fconsent%25253Fauthuser%25253Dunknown%252526part%25253DAJi8hAMnh_qyW6hp5_XkYDYcIZwklWlSjcS_xWYDuujN7gDcJsKDSe_Raod1rYmtRxwfjFohlnLVSOC3KqtsTBwNYtqkXTxM6LD_kmb0T0KiBk_dghhDklsFYJa6C91o4NE0ghVL0TyANW8qtw7prZYvAA7R2YhuCN6rpc17LRz2i3dAmeUVucoDgkexGJbGxknZI50k30tFJFz-LKiMFityric2NU_hl23V6g7eubk_0IdiySZsGN6ptEv6VAIJRiOQwjOi9hwawvs16LTHSX3DsRi38pCFkN-vBNiGDF2snFnwadNKsxGz8GqCSMbn1XAiQHTcND4_Bw6yp9C0kvLjoDLmg99ibBCtiPJZY99UWgmzaueYiE5xsned_awJPcxorAnb_i52chRGAKrFzFKOFRIzv7jb1uVOfg9v64KsuwEAMkfC0WbV-4t9znLbDW0y1rLGx1RD%252526as%25253DOB9DqYLOmLqD0AwGSCk9aw%252523'
+Email = 'koleksandr@ebates.com'
+Pass = "Ajisaihana1$"
+
+
+class Okta(object):
+    def __init__(self):
+        options = ChromeOptions().add_argument("C://Users/akomakha/AppData/Local/Temp/scoped_dir13776_1132199751/Default")
+        self.browser = Chrome(chrome_options=options)
+        self.browser.get(BaseUrl)
+
+    def signup(self):
+        username = self.browser.find_element_by_id('okta-signin-username')
+        self.slow_typing(username, Email)
+        password = self.browser.find_element_by_id('okta-signin-password')
+        self.slow_typing(password, Pass)
+
+        signin = self.browser.find_element_by_id('okta-signin-submit')
+        signin.click()
+
+
+b1 = Okta()
+b1.signup()
+b2 = Okta()
+b2.validate_signupform()
